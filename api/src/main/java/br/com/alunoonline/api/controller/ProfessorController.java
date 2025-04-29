@@ -18,7 +18,6 @@ public class ProfessorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-
     public void criarProfessor(@RequestBody Professor professor) {
         professorService.criarProfessor(professor);
     }
