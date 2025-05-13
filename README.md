@@ -31,7 +31,7 @@ Exclusão de professor:<br>
 
 ## Outros
 Após a criação de professor em disciplinas, não será possível excluir o professor antes de excluir disciplina.<br> Visualize que ao tentar excluir professor, coloquei um professor que existe no banco, porém ele está associado a uma disciplina.<br>
-<img src="./assets/professorErroDeletar.png" style="width: 1000px; height: 600px"><br>
+<img src="./assets/professorErroDeletar.png" style="width: 900px; height: 500px"><br>
 Script utilizado para criar pessoas de forma fácil por meio do Postman:<br>
 <img src="./assets/scriptCriarPessoa.png" style="width: 1000px; height: 600px"><br>
 Swagger do projeto:<br>
