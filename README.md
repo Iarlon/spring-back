@@ -28,9 +28,13 @@ Listagem de professor:<br>
 <img src="./assets/professorListar.png" style="width: 1000px; height: 600px">
 Exclusão de professor:<br>
 <img src="./assets/professorDeletar.png" style="width: 1000px; height: 600px">
-## ATENÇÃO!!!
+## Outros
 Após a criação de professor em disciplinas, não será possível excluir o professor antes de excluir disciplina.<br> Visualize que ao tentar excluir professor, coloquei um professor que existe no banco, porém ele está associado a uma disciplina.
-<img src="./assets/professorErroDeletar.png" style="width: 1000px; height: 600px">
+<img src="./assets/professorErroDeletar.png" style="width: 1000px; height: 600px"><br>
+Script utilizado para criar pessoas de forma fácil por meio do Postman:<br>
+<img src="./assets/scriptCriarPessoa.png" style="width: 1000px; height: 600px"><br>
+Swagger do projeto:<br>
+<img src="./assets/swaggerPrint.png" style="width: 1000px; height: 600px"><br>
 
 ## Disciplina
 Após a criação do endpoint de disciplina, segue imagens de sua implementação:<br>
@@ -45,3 +49,12 @@ Listagem de disciplina:<br>
 <br>
 Exclusão de disciplina:<br>
 <img src="./assets/disciplinaDeletar.png" style="width: 1000px; height: 600px">
+
+## Matricula
+Após a criação do endpoint de matricula, segue imagens de sua implementação:<br>
+Criação de matricula: <br>
+<img src="./assets/matricularAluno.png" style="width: 1000px; height: 600px">
+<br>
+Trancar matricula: <br>
+<img src="./assets/trancarMatricula.png" style="width: 1000px; height: 600px">
+<br>
