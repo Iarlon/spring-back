@@ -1,5 +1,6 @@
 package br.com.alunoonline.api.controller;
 
+import br.com.alunoonline.api.dtos.AtualizarNotasRequestDTO;
 import br.com.alunoonline.api.enums.MatriculaAlunoStatusEnum;
 import br.com.alunoonline.api.model.MatriculaAluno;
 import br.com.alunoonline.api.service.MatriculaAlunoService;
@@ -24,5 +25,11 @@ public class MatriculaAlunoController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void trancarMatricula(@PathVariable Long id){
         matriculaAlunoService.trancarMatricula(id);
+    }
+
+    @PatchMapping("/aluno/{matriculaId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizarNotas(Long matirculaId, AtualizarNotasRequestDTO atualizarNotasRequestDTO){
+        matriculaAlunoService.atualizarNota(matirculaId, atualizarNotasRequestDTO);
     }
 }

@@ -46,6 +46,5 @@ public class ProfessorService {
 
         // LINHA QUE DEVOLVE O PROFESSOR QUE FOI EDITADO PARA O BANCO DE DADOS
         professorRepository.save(professorParaEditar);
-
     }
 }

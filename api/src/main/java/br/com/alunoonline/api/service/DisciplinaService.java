@@ -42,6 +42,15 @@ public class DisciplinaService {
         disciplinaParaEditar.setProfessor(disciplina.getProfessor());
 
         disciplinaRepository.save(disciplinaParaEditar);
-
+    }
+    public List<Disciplina> listarDisciplinasPorProf(Long professorId){
+//        return disciplinaRepository.findByProfessorId(professorId);
+        try{
+            return disciplinaRepository.findByProfessorId(professorId);
+//                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado com ID: " + professorId));
+        }catch (Exception e){
+            System.out.println("Id de professor incorreto");
+            throw e;
+        }
     }
 }
