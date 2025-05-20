@@ -27,9 +27,9 @@ public class MatriculaAlunoController {
         matriculaAlunoService.trancarMatricula(id);
     }
 
-    @PatchMapping("/aluno/{matriculaId}")
+    @PatchMapping("/atualizar-notas/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizarNotas(Long matirculaId, AtualizarNotasRequestDTO atualizarNotasRequestDTO){
-        matriculaAlunoService.atualizarNota(matirculaId, atualizarNotasRequestDTO);
+    public void atualizarNotas(@PathVariable Long id, @RequestBody AtualizarNotasRequestDTO atualizarNotasRequestDTO){
+        matriculaAlunoService.atualizarNota(id, atualizarNotasRequestDTO);
     }
 }
