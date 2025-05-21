@@ -1,6 +1,7 @@
 package br.com.alunoonline.api.controller;
 
 import br.com.alunoonline.api.dtos.AtualizarNotasRequestDTO;
+import br.com.alunoonline.api.dtos.HistoricoAlunoResponseDTO;
 import br.com.alunoonline.api.enums.MatriculaAlunoStatusEnum;
 import br.com.alunoonline.api.model.MatriculaAluno;
 import br.com.alunoonline.api.service.MatriculaAlunoService;
@@ -31,5 +32,11 @@ public class MatriculaAlunoController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizarNotas(@PathVariable Long id, @RequestBody AtualizarNotasRequestDTO atualizarNotasRequestDTO){
         matriculaAlunoService.atualizarNota(id, atualizarNotasRequestDTO);
+    }
+
+    @GetMapping("/historico/{alunoId}")
+    @ResponseStatus(HttpStatus.OK)
+    public HistoricoAlunoResponseDTO emitirHistorico(@PathVariable Long alunoId){
+        return matriculaAlunoService.emitirHistorico(alunoId);
     }
 }
