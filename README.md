@@ -155,12 +155,6 @@ A documentação interativa está disponível em:
 
 ---
 
-## Scripts Úteis
-
-- **Script para criar pessoas via Postman:**  
-  <img src="assets/images/scriptCriarPessoa.png" alt="Script criar pessoa" width="600">
-
----
 
 ## Endpoints Principais
 
