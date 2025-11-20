@@ -1,4 +1,4 @@
-package br.com.alunoonline.api.config;
+package br.com.alunoonline.api.infra.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

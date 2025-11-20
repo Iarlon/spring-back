@@ -5,60 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="304159dc-63ad-49b7-bb3a-9050bc31e2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__create-table-usuario.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__create-table-aluno.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V3__create-table-professor.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V4__create-table-disciplina.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V5__create-table-matricula-aluno.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/docker/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/ApiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/controller/AlunoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/controller/DisciplinaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/controller/MatriculaAlunoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/controller/ProfessorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/dtos/AtualizarNotasRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/dtos/DisciplinasAlunoResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/dtos/HistoricoAlunoResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/enums/MatriculaAlunoStatusEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/model/Aluno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/model/Disciplina.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/model/MatriculaAluno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/model/Professor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/repository/AlunoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/repository/DisciplinaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/repository/MatriculaAlunoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/repository/ProfessorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/service/AlunoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/service/DisciplinaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/service/MatriculaAlunoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/com/alunoonline/api/service/ProfessorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/br/com/alunoonline/api/ApiApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/bancoAposCriacao.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/bancoAposDeletar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/criarAluno.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/deletandoUsuarioPorId.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/disciplinaAtualizar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/disciplinaCriar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/disciplinaDeletar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/disciplinaListar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fotoListarPorID.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/listarTodosUsuarios.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/matricularAluno.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/professorAtualizar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/professorCriar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/professorDeletar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/professorErroDeletar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/professorListar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scriptCriarPessoa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/swaggerPrint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/trancarMatricula.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,29 +39,37 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2x2phPculPWkn66LjgtjOb4svdq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApiApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Faculdade/back-end/spring-back",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Faculdade/back-end/spring-back&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
