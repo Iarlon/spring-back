@@ -5,7 +5,6 @@ import br.com.alunoonline.api.infra.security.SecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -31,6 +30,7 @@ public class SecurityConfigurations {
     public SecurityFilterChain securityFilterChain(HttpSecurity http)
             throws Exception {
         // desabilita o csrf
+
         return http.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy
                         (SessionCreationPolicy.STATELESS))
@@ -40,7 +40,6 @@ public class SecurityConfigurations {
                     req.requestMatchers("/v3/api-docs/**").permitAll();
                     req.requestMatchers("/swagger-ui.html").permitAll();
                     req.requestMatchers("/swagger-ui/**").permitAll();
-                    req.requestMatchers("/v3/api-docs.yaml").permitAll();
                     req.anyRequest().authenticated();
                 })
                 .addFilterBefore(securityFilter,

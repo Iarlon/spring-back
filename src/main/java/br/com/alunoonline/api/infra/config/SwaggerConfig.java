@@ -9,8 +9,6 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-
 @Configuration
 public class SwaggerConfig {
 
@@ -24,7 +22,7 @@ public class SwaggerConfig {
                                         .scheme("bearer")
                                         .bearerFormat("JWT")))
                 .info(new Info()
-                        .title("faculdade API")
+                        .title("Aluno online API")
                         .description("API Rest da aplicação de faculdade, contendo as funcionalidades de CRUD de cadastro, atualização e exclusão de alunos, professores, matérias e matrículas")
                         .contact(new Contact()
                                 .name("Time Backend")
