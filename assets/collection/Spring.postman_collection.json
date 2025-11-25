@@ -1,0 +1,594 @@
+{
+	"info": {
+		"_postman_id": "a6830684-a446-4517-b5bf-c4d883d95298",
+		"name": "Spring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36670320"
+	},
+	"item": [
+		{
+			"name": "alunos",
+			"item": [
+				{
+					"name": "criarAluno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const nomes = [\r",
+									"    \"Iarlon\", \"Mariana\", \"Carlos\", \"Fernanda\", \"Rafael\",\r",
+									"    \"Amanda\", \"João\", \"Paula\", \"Guilherme\", \"Luana\"\r",
+									"];\r",
+									"const sobrenomes = [\r",
+									"    \"Soares\", \"Silva\", \"Pereira\", \"Almeida\", \"Costa\",\r",
+									"    \"Oliveira\", \"Souza\", \"Ferreira\", \"Lima\", \"Gomes\"\r",
+									"];\r",
+									"function gerarCPF() {\r",
+									"    // Gera 9 números aleatórios\r",
+									"    let cpf = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));\r",
+									"\r",
+									"    // Calcula o primeiro dígito verificador (10º dígito)\r",
+									"    let soma = cpf.reduce((acc, val, idx) => acc + val * (10 - idx), 0);\r",
+									"    let digito1 = 11 - (soma % 11);\r",
+									"    if (digito1 >= 10) digito1 = 0;\r",
+									"    cpf.push(digito1);\r",
+									"\r",
+									"    // Calcula o segundo dígito verificador (11º dígito)\r",
+									"    soma = cpf.reduce((acc, val, idx) => acc + val * (11 - idx), 0);\r",
+									"    let digito2 = 11 - (soma % 11);\r",
+									"    if (digito2 >= 10) digito2 = 0;\r",
+									"    cpf.push(digito2);\r",
+									"\r",
+									"    // Formata como string (xxx.xxx.xxx-xx)\r",
+									"    return cpf.join('')\r",
+									"        .replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, '$1.$2.$3-$4');\r",
+									"}\r",
+									"\r",
+									"const nome = nomes[Math.floor(Math.random() * nomes.length)];\r",
+									"const sobrenome = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];\r",
+									"const email = `${nome.toLowerCase()}@${sobrenome.toLowerCase()}.com`;\r",
+									"let cpfValido = gerarCPF();\r",
+									"\r",
+									"pm.environment.set(\"nomeUsuario\", nome);\r",
+									"pm.environment.set(\"sobrenomeUsuario\", sobrenome);\r",
+									"pm.environment.set(\"emailUsuario\", email);\r",
+									"pm.environment.set(\"cpfUsuario\", cpfValido)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{nomeUsuario}} {{sobrenomeUsuario}}\",\r\n    \"email\": \"{{emailUsuario}}\",\r\n    \"cpf\": \"{{cpfUsuario}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/alunos",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarTodosAluno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/alunos",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarAlunoPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/alunos/1",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"alunos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletarAlunoPorId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/alunos/4",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"alunos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarAlunoPorId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"atualizado\",\r\n    \"email\": \"atualizado@atualizado.com\",\r\n    \"cpf\": \"050.901.752-50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/alunos/1",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"alunos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "professores",
+			"item": [
+				{
+					"name": "criarProfessor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"function gerarCPF() {\r",
+									"    // Gera 9 números aleatórios\r",
+									"    let cpf = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));\r",
+									"\r",
+									"    // Calcula o primeiro dígito verificador (10º dígito)\r",
+									"    let soma = cpf.reduce((acc, val, idx) => acc + val * (10 - idx), 0);\r",
+									"    let digito1 = 11 - (soma % 11);\r",
+									"    if (digito1 >= 10) digito1 = 0;\r",
+									"    cpf.push(digito1);\r",
+									"\r",
+									"    // Calcula o segundo dígito verificador (11º dígito)\r",
+									"    soma = cpf.reduce((acc, val, idx) => acc + val * (11 - idx), 0);\r",
+									"    let digito2 = 11 - (soma % 11);\r",
+									"    if (digito2 >= 10) digito2 = 0;\r",
+									"    cpf.push(digito2);\r",
+									"\r",
+									"    // Formata como string (xxx.xxx.xxx-xx)\r",
+									"    return cpf.join('')\r",
+									"        .replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, '$1.$2.$3-$4');\r",
+									"}\r",
+									"\r",
+									"let cpfValido = gerarCPF();\r",
+									"pm.environment.set(\"cpfUsuario\", cpfValido);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"cpf\": \"{{cpfUsuario}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/professores",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"professores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarTodosProfessores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/professores",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"professores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarProfessorPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/professores/1",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"professores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletarProfessorPorId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/professores/7",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"professores",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarProfessorPorId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"atualizado\",\r\n    \"email\": \"atualizado@atualizado.com\",\r\n    \"cpf\": \"050.901.752-50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/professores/8",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"professores",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "disciplinas",
+			"item": [
+				{
+					"name": "criarDisciplina",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const subjects = ['Matemática', 'História', 'Geografia', 'Biologia', 'Física', 'Química', 'Português', 'Inglês', 'Artes', 'Educação Física'];\r",
+									"const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];\r",
+									"pm.environment.set(\"nomeCursos\", randomSubject);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{nomeCursos}}\",\r\n    \"cargaHoraria\": 40,\r\n    \"professor\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/disciplinas",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarTodasDisciplinas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/disciplinas",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarDisciplinasPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/disciplinas/3",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"disciplinas",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarDisciplinaPorProf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/disciplinas/professor/1",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"disciplinas",
+								"professor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletarDisciplinaPorId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/disciplinas/6",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"disciplinas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarDisciplinaPorId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"atualizado\",\r\n    \"cargaHoraria\": 40,\r\n    \"professor\":{\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/disciplinas/1",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"disciplinas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "matriculas",
+			"item": [
+				{
+					"name": "criarMatricula",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alunoId\": 7,\r\n    \"disciplinaId\": 10,\r\n    \"nota1\": 10.0,\r\n    \"nota2\": 10.00\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/matriculas",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"matriculas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trancarMatricula",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/matriculas/trancar/11",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"matriculas",
+								"trancar",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarNotasPorId",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nota1\": 7.0,\r\n    \"nota2\": 8.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/matriculas/atualizar-notas/18",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"matriculas",
+								"atualizar-notas",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exibirHistorico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/matriculas/historico/5",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"matriculas",
+								"historico",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlBase",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
